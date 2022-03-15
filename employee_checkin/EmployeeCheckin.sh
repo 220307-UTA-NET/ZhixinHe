@@ -30,7 +30,8 @@ done
 
 #echo ${EmployeeNames[@]} >> ./ClockInOut.txt
 for key in ${!EmployeesCheckin[@]}; do
-	echo "$(date --date=@${key} +'%Y%M%d %T') ${EmployeesCheckin[$key]} checked in" >> $filename
+	echo "$key ---> ${EmployeesCheckin[$key]}"
+	echo "$(date --date=@${key} +'%Y%M%d %T') ${EmployeesCheckin[$key]} checked in" | tee -a $filename
 done
 
 
