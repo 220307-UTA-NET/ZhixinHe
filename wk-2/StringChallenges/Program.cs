@@ -19,4 +19,4 @@ string lName = Console.ReadLine();
 Console.WriteLine($"{fName} {lName}");
 Console.WriteLine($"{fName[0]}{lName[0]}");
 Console.WriteLine(fName + lName[0] + lName[1]);
-Console.WriteLine(lName);
+Console.WriteLine(lName.Length);
