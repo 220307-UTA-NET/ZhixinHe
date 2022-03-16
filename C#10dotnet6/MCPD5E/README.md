@@ -1,0 +1,1 @@
+all the practices in this directory references the book, C# 9 and .NET 5 – Modern Cross-Platform Development , which can be found https://www.amazon.com/NET-Cross-Platform-Development-intelligent-Framework-dp-180056810X/dp/180056810X/ref=mt_other?_encoding=UTF8&me=&qid=1647444835
