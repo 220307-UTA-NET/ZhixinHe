@@ -16,5 +16,6 @@ public class EFOrderRepository : IOrderRepository
         {
             context.Orders.Add(order);
         }
+        context.SaveChanges();
     }
 }
