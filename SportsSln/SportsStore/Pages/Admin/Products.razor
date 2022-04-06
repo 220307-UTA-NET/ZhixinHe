@@ -19,6 +19,7 @@
                     <td>@p.Name</td>
                     <td>@p.Category</td>
                     <td>@p.Price.ToString("c")</td>
+                    <td>@p.Quantity</td>
                     <td>
                         <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(p.ProductID ?? 0)">
                             Details
