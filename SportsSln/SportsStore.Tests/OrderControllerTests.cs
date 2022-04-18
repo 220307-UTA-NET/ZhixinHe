@@ -12,12 +12,13 @@ public class OrderControllerTests
     {
         // Arrange - create a mock repository
         Mock<IOrderRepository> mock = new();
+        Mock<IStoreRepository> mockStoreRepository = new();
         // Arrange - create an empty cart
         Cart cart = new();
         // Arrange - create the order
         Order order = new();
         // Arrange - create an instance of the controller
-        OrderController target = new(mock.Object, cart);
+        OrderController target = new(mock.Object, cart, mockStoreRepository.Object);
 
         // Act
         ViewResult? result = target.Checkout(order) as ViewResult;
@@ -34,9 +35,10 @@ public class OrderControllerTests
     {
         // Arrange
         Mock<IOrderRepository> mock = new();
+        Mock<IStoreRepository> mockStoreRepository = new();
         Cart cart = new();
         cart.AddItem(new Product(), 1);
-        OrderController target = new(mock.Object, cart);
+        OrderController target = new(mock.Object, cart, mockStoreRepository.Object);
         target.ModelState.AddModelError("error", "error");
         // Act - try to checkout
         ViewResult? result = target.Checkout(new Order()) as ViewResult;
@@ -50,9 +52,10 @@ public class OrderControllerTests
     {
         // Arrange
         Mock<IOrderRepository> mock = new();
+        Mock<IStoreRepository> mockStoreRepository = new();
         Cart cart = new();
         cart.AddItem(new Product(), 1);
-        OrderController target = new(mock.Object, cart);
+        OrderController target = new(mock.Object, cart, mockStoreRepository.Object);
         // Act
         RedirectToPageResult? result = target.Checkout(new Order()) as RedirectToPageResult;
         // Assert
